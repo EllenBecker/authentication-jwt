@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.login.authentication.security.jwt.AuthEntryPointJwt;
 import com.login.authentication.security.jwt.AuthTokenFilter;
-import com.login.authentication.security.services.UserDetailsServiceImpl;
+import com.login.authentication.security.services.UserDetalheService;
 
 @Configuration
 @EnableGlobalMethodSecurity(
@@ -28,7 +28,7 @@ public class WebSecurityConfig {
   private String h2ConsolePath;
   
   @Autowired
-  UserDetailsServiceImpl userDetailsService;
+  UserDetalheService userDetailsService;
 
   @Autowired
   private AuthEntryPointJwt unauthorizedHandler;
@@ -68,7 +68,6 @@ public class WebSecurityConfig {
         .antMatchers(h2ConsolePath + "/**").permitAll()
         .anyRequest().authenticated();
     
- // fix H2 database console: Refused to display ' in a frame because it set 'X-Frame-Options' to 'deny'
     http.headers().frameOptions().sameOrigin();
     
     http.authenticationProvider(authenticationProvider());

@@ -3,21 +3,21 @@ package com.login.authentication.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "roles")
-public class Role {
+@Table(name = "tipo_usuario")
+public class TipoUsuario {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
   @Enumerated(EnumType.STRING)
   @Column(length = 20)
-  private ERole name;
+  private EnumTipoUsuario name;
 
-  public Role() {
+  public TipoUsuario() {
 
   }
 
-  public Role(ERole name) {
+  public TipoUsuario(EnumTipoUsuario name) {
     this.name = name;
   }
 
@@ -29,11 +29,11 @@ public class Role {
     this.id = id;
   }
 
-  public ERole getName() {
+  public EnumTipoUsuario getName() {
     return name;
   }
 
-  public void setName(ERole name) {
+  public void setName(EnumTipoUsuario name) {
     this.name = name;
   }
 }

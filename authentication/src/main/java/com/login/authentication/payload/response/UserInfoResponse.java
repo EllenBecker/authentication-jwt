@@ -6,13 +6,13 @@ public class UserInfoResponse {
 	private Long id;
 	private String username;
 	private String email;
-	private List<String> roles;
+	private List<String> tiposUsuario;
 
-	public UserInfoResponse(Long id, String username, String email, List<String> roles) {
+	public UserInfoResponse(Long id, String username, String email, List<String> tiposUsuario) {
 		this.id = id;
 		this.username = username;
 		this.email = email;
-		this.roles = roles;
+		this.tiposUsuario = tiposUsuario;
 	}
 
 	public Long getId() {
@@ -39,7 +39,7 @@ public class UserInfoResponse {
 		this.username = username;
 	}
 
-	public List<String> getRoles() {
-		return roles;
+	public List<String> getTiposUsuario() {
+		return tiposUsuario;
 	}
 }

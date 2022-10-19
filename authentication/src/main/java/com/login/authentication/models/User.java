@@ -34,10 +34,10 @@ public class User {
   private String password;
 
   @ManyToMany(fetch = FetchType.LAZY)
-  @JoinTable(name = "user_roles", 
+  @JoinTable(name = "usuario_tipo_usuario",
              joinColumns = @JoinColumn(name = "user_id"),
-             inverseJoinColumns = @JoinColumn(name = "role_id"))
-  private Set<Role> roles = new HashSet<>();
+             inverseJoinColumns = @JoinColumn(name = "tipo_usuario_id"))
+  private Set<TipoUsuario> tiposUsuario = new HashSet<>();
 
   public User() {
   }
@@ -80,11 +80,11 @@ public class User {
     this.password = password;
   }
 
-  public Set<Role> getRoles() {
-    return roles;
+  public Set<TipoUsuario> getTiposUsuario() {
+    return tiposUsuario;
   }
 
-  public void setRoles(Set<Role> roles) {
-    this.roles = roles;
+  public void setTiposUsuario(Set<TipoUsuario> tiposUsuario) {
+    this.tiposUsuario = tiposUsuario;
   }
 }
